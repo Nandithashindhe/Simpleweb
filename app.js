@@ -58,15 +58,21 @@ loginForm.addEventListener("submit", function (event) {
     ) {
         loginView.style.display = "none";
         userListView.style.display = "block";
-        const welcomeMsg = document.createElement("div");
+        const existingWelcome = document.getElementById("welcome-message");
+if (existingWelcome) {
+  existingWelcome.remove();
+}
+
+const welcomeMsg = document.createElement("div");
+welcomeMsg.id = "welcome-message";
 welcomeMsg.textContent = "🎉 Welcome to the user dashboard!";
 welcomeMsg.style.textAlign = "center";
 welcomeMsg.style.fontWeight = "bold";
 welcomeMsg.style.marginBottom = "16px";
 welcomeMsg.style.fontSize = "18px";
 welcomeMsg.style.color = "#00ff88";
+userListContainer.prepend(welcomeMsg);
 
-        userListContainer.prepend(welcomeMsg);
         userListElement.innerHTML = "";
         currentBatch = 0;
         allUsers = [];
