@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login + User List with Infinite Scroll</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="login-view" class="container">
+    <form id="login-form" class="form-card">
+      <h2>Login</h2>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="Enter your email" />
+        <small class="error" id="email-error"></small>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Enter your password" />
+        <small class="error" id="password-error"></small>
+      </div>
+      <div class="form-group">
+        <label for="company">Company</label>
+        <input type="text" id="company" placeholder="Enter your company" />
+        <small class="error" id="company-error"></small>
+      </div>
+      <button type="submit" class="btn-primary">Login</button>
+      <small class="error" id="login-error"></small>
+    </form>
+  </div>
+
+  <div id="user-list-view" class="container hidden">
+    <div class="user-list-header">
+      <h2>User List</h2>
+      <button id="logout-btn" class="btn-logout">Logout</button>
+    </div>
+    <div id="user-list-container" class="user-list-container">
+      <ul id="user-list"></ul>
+      <div id="loading" class="loading hidden">Loading...</div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
